@@ -20,8 +20,8 @@
     if ( redirects[path] ) {
       window.location.replace( redirects[path] );
     } else {
-      // Redirect to the Angular app with the correct route
-      window.location.replace( "/?" + path );
+      path = path + window.location.search + window.location.hash;
+      window.location.replace( "/?redirect=" + encodeURIComponent( path ) );
     }
   </script>
 </head>
