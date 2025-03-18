@@ -6,11 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
   <script>
-    // Extract the path from the current URL
-    var path = window.location.pathname + window.location.search + window.location.hash;
+    var redirects = {
+      "/index.php/company/careers/": "/careers",
+      "/index.php/contact-us/": "/contact-us",
+      "/index.php/technologies/": "/technologies",
+      "/index.php/industries/architecture/": "/industries/automotive",
+      "/index.php/hcm/": "/technologies/oracle-hcm"
+    };
 
-    // Redirect to the Angular app with the full path
-    window.location.replace( "/?" + path );
+    var path = window.location.pathname;
+
+    // If the path exists in the redirects object, redirect to the new page
+    if ( redirects[path] ) {
+      window.location.replace( redirects[path] );
+    } else {
+      // Redirect to the Angular app with the correct route
+      window.location.replace( "/#" + path );
+    }
   </script>
 </head>
 
