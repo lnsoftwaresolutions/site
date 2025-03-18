@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /job-posts/
+Disallow: /404.html
+
+# Allow everything else
+Allow: /
+
+# Sitemap
+Sitemap: https://lnsoftwaresolutions.com/sitemap.xml
